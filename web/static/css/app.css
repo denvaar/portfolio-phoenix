@@ -1,0 +1,99 @@
+html, body {
+  height: calc(100% - 3rem);
+  margin: 0;
+  padding: 0;
+  font-family: 'Avenir Next', sans-serif;
+  color: #545454;
+  background: #fafafa;
+  box-sizing: border-box;
+}
+
+a {
+  color: #545454;
+  text-decoration: underline;
+}
+
+a:hover,
+a:active {
+  color: #0089ff;
+}
+
+.github i { color: black; padding-left: 2px; }
+.linkedin i { color: #0077b5; padding-left: 2px; }
+.stack-overflow i { color: #f48024; padding-left: 2px; }
+.instagram i { color: #fa8762; padding-left: 2px; }
+.envelope i { color: #545454; padding-left: 2px; }
+
+footer.footer {
+  font-size: 10px;
+  text-align: center;
+  width: 100%;
+  height: 3em;
+  margin-top: -3em;
+  margin-bottom: 0.5rem;
+}
+
+.profilePic {
+  width: 150px;
+  border: 6px solid #ff887f;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+}
+
+.rotate {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.fancy-header {
+  display: -webkit-inline-box;
+}
+
+.hideifsmall {
+  display: none;
+}
+
+header.header {
+  /*height: 2.5rem;*/
+  height: 5rem;
+  background: #fff;
+  /*line-height: 2.5rem;*/
+  
+  text-align: center;
+}
+
+.nav a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+ul.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  /*display: inline;*/
+  /*margin-left: 1rem;*/
+}
+
+.nav li:first-child {
+  /*margin-left: 0.5rem;*/
+  margin-top: 0.5rem;
+}
+
+.container {
+  min-height: 100%;
+}
+.content-container {
+  margin: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+.just-center {
+  text-align: center;
+}

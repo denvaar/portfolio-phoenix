@@ -1,0 +1,29 @@
+<div class="content-container">
+  <img class="profilePic" src='<%= static_path(@conn, "/images/profile.png") %>' />
+  <div class="just-center">
+    <p>
+       <a href="https://github.com/denvaar" class="github"><i class="fa fa-github"></i></a>
+       <a href="https://gist.github.com/denvaar" class="envelope"><i class="fa fa-github-square"></i></a>
+       <a href="https://www.linkedin.com/in/denver-smith-a41997103" class="linkedin"><i class="fa fa-linkedin-square"></i></a>
+       <a href="http://stackoverflow.com/users/1718122/denvaar?tab=profile" class="stack-overflow"><i class="fa fa-stack-overflow"></i></a>
+       <a href="https://www.instagram.com/denvaar/?hl=en" class="instagram"><i class="fa fa-instagram"></i></a>
+       <a href="mailto:denverpsmith@gmail.com" class="envelope"><i class="fa fa-envelope"></i></a> 
+    </p>  
+
+  </div>
+  <p><b>I'm Denver</b>. Find me in front of a computer, or on my bicycle.</p>
+  <p>I love making software -- it's satisfying and personally rewarding for me to see what I can accomplish. I'm passionate about spending my time learning, creating, and hopefully sharing the results with others.</p>
+  <div class="just-center">
+    <p>Working @ <a href="http://decisely.com/">Decisely</a>
+  
+    <div class="fancy-header">
+      <div class="rotate">↘</div>
+      Currently
+      <div>↘</div>
+    </div>
+  
+    <p>Spending too much $ on vinyl records ● Reading <i>The Black Tulip</i> ● Getting up to speed with Ruby/Rails as well as Elixir/Phoenix</p>
+
+    <p><i>Updated: June 2017</i></p>
+  </div>
+</div>

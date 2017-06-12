@@ -1,0 +1,23 @@
+<div class="content-container">
+  <div class="post-text">
+    <div class="span-whole-page">
+      <div class="page-nav">
+        <%= link "← Back", to: post_path(@conn, :index) %>
+        <%= if @current_user do %>
+          &nbsp;
+          <%= link to: post_path(@conn, :edit, @post) do %>
+            <i class="fa fa-pencil-square" aria-hidden="true"></i>
+          <%= end %>
+        <% end %>
+      </div>
+      <div class="just-center">
+        <h1><%= @post.title %></h1>
+        <h4><%= @post.summary %></h4>
+      </div>
+    </div>
+    <div class="post-body">
+      <%= as_html(@post.content) %>
+      <h6 class="just-right">Written by <%= @post.author %><br/><%= format_date(@post.inserted_at) %><%= if @post.updated_at do %> <i>(Last updated: <%= format_date(@post.updated_at) %>)</i><%= end %></h6>
+    </div>
+  </div>
+</div>

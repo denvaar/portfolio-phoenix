@@ -8,8 +8,10 @@
     <meta name="author" content="">
 
     <title>I'm Denver</title>
+    <link href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/masonry.css") %>">
   </head>
 
   <body>
@@ -17,10 +19,17 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav">
-            <li>Denver Smith <i class="fa fa-code" aria-hidden="true"></i></li>
+            <li>
+              <i class="fa fa-code" aria-hidden="true"></i> Denver Smith
+            </li>
+            <%= if @current_user do %>
+              <li>
+                <%= link "Sign out", to: session_path(@conn, :delete, @current_user), method: "delete" %>
+              </li>
+            <%= end %>
             <li class="hideifsmall">|</li>
-            <li><a href="">About</a></li>
-            <li><a href="">Posts</a></li>
+            <li><%= link "About", to: page_path(@conn, :index) %></li>
+            <li><%= link "Posts", to: post_path(@conn, :index) %></li>
           </ul>
         </nav>
       </header>

@@ -1,4 +1,4 @@
-<div class="content-container">
+<div class="about-content-container">
   <img class="profilePic" src='<%= static_path(@conn, "/images/profile.png") %>' />
   <div class="just-center">
     <p>
@@ -11,8 +11,8 @@
     </p>  
 
   </div>
-  <p><b>I'm Denver</b>. Find me in front of a computer, or on my bicycle.</p>
-  <p>I love making software -- it's satisfying and personally rewarding for me to see what I can accomplish. I'm passionate about spending my time learning, creating, and hopefully sharing the results with others.</p>
+  <p class="just-center"><b>I'm Denver</b>. Find me in front of a computer, or on my bicycle.</p>
+  <p class="just-justify">I love making software -- it's satisfying and personally rewarding for me to see what I can accomplish. I'm passionate about spending my time learning, creating, and hopefully sharing the results with others.</p>
   <div class="just-center">
     <p>Working @ <a href="http://decisely.com/">Decisely</a>
   

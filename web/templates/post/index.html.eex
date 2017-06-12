@@ -1,0 +1,34 @@
+<div class="wider">
+  <div class="post-banner">    
+    <h1 class="longshadow just-center">Posts!</h1>
+  </div>
+  <div class="push-down">
+  <div class="just-center">
+    <%= pagination_links @page, next: "⟶", previous: "⟵", class: "pagination" %>
+  </div>
+  <%= if @current_user do %>
+    <%= link to: post_path(@conn, :new) do %>
+      <i class="fa fa-2x fa-plus-square" aria-hidden="true"></i>
+    <%= end %>
+  <%= end %>
+
+  </div>
+  <div class="masonry post-text">
+    <%= for post <- @posts do %>
+      <div class="item">
+        <%= if @current_user do %>
+          <%= link to: post_path(@conn, :edit, post) do %>
+            <i class="fa fa-2x fa-pencil-square" aria-hidden="true"></i>
+          <%= end %>
+        <%= end %>
+        <h1>
+          <%= link to: post_path(@conn, :show, post) do %>
+            <%= post.title %>
+          <%= end %>
+        </h1>
+        <p><%= post.date_published %></p>
+        <p><%= post.summary %></p>
+      </div>
+    <%= end %>
+  </div>
+</div>

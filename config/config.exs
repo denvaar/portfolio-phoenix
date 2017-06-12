@@ -22,6 +22,13 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+config :guardian, Guardian,
+  issuer: "PortfolioPhoenix",
+  ttl: { 1, :days },
+  allowed_drift: 2000,
+  secret_key: "Us/zphdW0badiHpfiF5Mh4uhEuTeIcgrLUqOgvu6IS/6ZEJnuXvEkYHiMt/sU/wR",
+  serializer: PortfolioPhoenix.GuardianSerializer
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"

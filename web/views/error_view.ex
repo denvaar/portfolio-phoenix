@@ -1,8 +1,12 @@
 defmodule PortfolioPhoenix.ErrorView do
   use PortfolioPhoenix.Web, :view
 
-  def render("404.html", _assigns) do
-    "Page not found"
+  def render("404.html", assigns) do
+    render("not_found.html", assigns)
+  end
+  
+  def render("401.html", assigns) do
+    render("not_authorized.html", assigns)
   end
 
   def render("500.html", _assigns) do

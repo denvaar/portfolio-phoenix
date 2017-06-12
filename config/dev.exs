@@ -18,7 +18,7 @@ config :portfolio_phoenix, PortfolioPhoenix.Endpoint,
 config :portfolio_phoenix, PortfolioPhoenix.Endpoint,
   live_reload: [
     patterns: [
-      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
+      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)^(uploads)$},
       ~r{priv/gettext/.*(po)$},
       ~r{web/views/.*(ex)$},
       ~r{web/templates/.*(eex)$}

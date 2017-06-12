@@ -11,16 +11,30 @@ defmodule PortfolioPhoenix.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug :fetch_session
+    plug :fetch_flash
+    #plug Guardian.Plug.VerifyHeader, realm: "Bearer"
+    #plug Guardian.Plug.LoadResource
+  end
+
+  pipeline :browser_auth do
+    plug Guardian.Plug.VerifySession
+    plug Guardian.Plug.LoadResource
+    plug PortfolioPhoenix.CurrentUser
   end
 
   scope "/", PortfolioPhoenix do
-    pipe_through :browser # Use the default browser stack
+    pipe_through [:browser, :browser_auth]
 
     get "/", PageController, :index
+    resources "/sessions", SessionController, only: [:new, :create, :delete]
+    resources "/posts", PostController
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", PortfolioPhoenix do
-  #   pipe_through :api
-  # end
+  scope "/api", PortfolioPhoenix do
+    pipe_through :api
+
+    post "/image/upload", PostController, :create_photo
+    delete "/image/remove", PostController, :remove_file
+  end
 end

@@ -43,10 +43,10 @@ defmodule PortfolioPhoenix.SessionController do
     |> redirect(to: page_path(conn, :index))
   end
   
-  def unauthenticated(conn, params) do
+  def unauthenticated(conn, _params) do
     conn
-    |> render(PortfolioPhoenix.ErrorView, :"401")
     |> put_status(401)
+    |> render(PortfolioPhoenix.PostView, "error.json", message: "401 Not Authorized")
   end
 
   defp logout(conn) do

@@ -24,4 +24,9 @@ defmodule PortfolioPhoenix.PostView do
   def render("remove.json", %{reason: reason}) do
     reason
   end
+
+  def render("error.json", %{message: message}) do
+    message 
+  end
+
 end

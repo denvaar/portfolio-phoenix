@@ -5,7 +5,7 @@ defmodule PortfolioPhoenix.PostController do
   alias PhoenixBlog.ImageUploader
   
   plug Guardian.Plug.EnsureAuthenticated,
-    [handler: PortfolioPhoenix.SessionController] when not action in [:index, :show]
+    [handler: __MODULE__] when not action in [:index, :show, :create_photo, :remove_file]
 
   def index(conn, params) do
     page = Post
@@ -68,18 +68,24 @@ defmodule PortfolioPhoenix.PostController do
 
   def create_photo(conn, %{"images" => upload}) do
     if uploaded_file = upload do
-      File.cp(uploaded_file.path, Application.app_dir(:portfolio_phoenix, "/priv/static/uploads/#{uploaded_file.filename}"))
+      File.cp(uploaded_file.path, Path.expand("./uploads/#{uploaded_file.filename}"))
     end
     render(conn, "upload.json", path: "/uploads/#{uploaded_file.filename}")
   end
 
   def remove_file(conn, %{"path" => path}) do
-    full_path = Application.app_dir(:portfolio_phoenix, "/priv/static/" <> path)
+    full_path = Path.expand("./" <> path)
     case File.rm(full_path) do
       :ok ->
         render(conn, "remove.json", path: path)
       {:error, reason} ->
         render(conn, "remove.json", reason: "Could not remove: file does not exist")
     end
+  end
+
+  def unauthenticated(conn, _params) do
+    conn
+    |> put_status(401)
+    |> render(PortfolioPhoenix.ErrorView, :"401")
   end
 end

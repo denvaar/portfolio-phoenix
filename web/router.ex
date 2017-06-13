@@ -13,8 +13,9 @@ defmodule PortfolioPhoenix.Router do
     plug :accepts, ["json"]
     plug :fetch_session
     plug :fetch_flash
-    #plug Guardian.Plug.VerifyHeader, realm: "Bearer"
-    #plug Guardian.Plug.LoadResource
+    plug Guardian.Plug.VerifySession
+    plug Guardian.Plug.EnsureAuthenticated,
+      handler: PortfolioPhoenix.SessionController
   end
 
   pipeline :browser_auth do

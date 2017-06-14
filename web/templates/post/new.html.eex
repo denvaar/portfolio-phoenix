@@ -1,11 +1,11 @@
 <div class="content-container post-content-container">
   <h2>New post</h2>
-
+  
   <%= link "←  Back", to: post_path(@conn, :index) %>
   <%= render "form.html", changeset: @changeset,
                           action: post_path(@conn, :create) %>
 </div>
 <script>
-  var content = "";
+  var content = "<%= escape_javascript {:safe, Map.get(@changeset.changes, :content, "")} %>";
 </script>
 <script src="<%= static_path(@conn, "/js/mdEditor.js") %>"></script>

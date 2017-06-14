@@ -1,5 +1,5 @@
 <div class="about-content-container">
-  <img class="profilePic" src='<%= static_path(@conn, "/images/profile.png") %>' />
+  <img class="profilePic" src='<%= static_path(@conn, "/images/me.png") %>' />
   <div class="just-center">
     <p>
        <a href="https://github.com/denvaar" class="github"><i class="fa fa-github"></i></a>

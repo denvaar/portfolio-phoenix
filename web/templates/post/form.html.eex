@@ -10,11 +10,29 @@
     <%= text_input f, :title, class: "form-control" %>
     <%= error_tag f, :title %>
   </div>
+  
+  <div class="form-group">
+    <%= label f, :published, class: "control-label" %>
+    <%= checkbox f, :published, class: "form-control" %>
+    <%= error_tag f, :published %>
+  </div>
 
   <div class="form-group">
     <%= label f, :date_published, class: "control-label" %>
     <%= text_input f, :date_published, class: "form-control", value: Timex.today %>
     <%= error_tag f, :date_published %>
+  </div>
+  
+  <div class="form-group">
+    <%= label f, :banner_bg_color, "Banner background", class: "control-label" %>
+    <%= text_input f, :banner_bg_color, class: "form-control" %>
+    <%= error_tag f, :banner_bg_color %>
+  </div>
+  
+  <div class="form-group">
+    <%= label f, :banner_fg_color, "Banner foreground", class: "control-label" %>
+    <%= text_input f, :banner_fg_color, class: "form-control" %>
+    <%= error_tag f, :banner_fg_color %>
   </div>
   
   <div class="form-group">

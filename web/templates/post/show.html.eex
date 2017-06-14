@@ -1,13 +1,11 @@
 <div class="content-container">
   <div class="post-text">
-    <div class="span-whole-page">
+    <div class="span-whole-page" style="background:<%= @post.banner_bg_color %>;color:<%= @post.banner_fg_color %>;">
       <div class="page-nav">
-        <%= link "← Back", to: post_path(@conn, :index) %>
+        <%= link "← Back", to: post_path(@conn, :index), style: "color:" <> @post.banner_fg_color %>
         <%= if @current_user do %>
           &nbsp;
-          <%= link to: post_path(@conn, :edit, @post) do %>
-            <i class="fa fa-pencil-square" aria-hidden="true"></i>
-          <%= end %>
+          <%= link "Edit", to: post_path(@conn, :edit, @post), style: "color:" <> @post.banner_fg_color %>
         <% end %>
       </div>
       <div class="just-center">

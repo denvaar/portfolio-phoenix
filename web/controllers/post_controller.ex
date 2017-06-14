@@ -8,7 +8,10 @@ defmodule PortfolioPhoenix.PostController do
     [handler: __MODULE__] when not action in [:index, :show, :create_photo, :remove_file]
 
   def index(conn, params) do
+    is_authenticated = Guardian.Plug.authenticated?(conn)
     page = Post
+           |> Post.maybe_filter_published(is_authenticated)
+           |> Post.sorted
            |> Repo.paginate(params)
     render(conn, "index.html", posts: page.entries, page: page)
   end

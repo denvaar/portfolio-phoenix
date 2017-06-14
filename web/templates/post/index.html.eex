@@ -15,7 +15,7 @@
   </div>
   <div class="masonry post-text">
     <%= for post <- @posts do %>
-      <div class="item">
+      <div class="<%= if post.published, do: "item", else: "unpublished item" %>">
         <%= if @current_user do %>
           <%= link to: post_path(@conn, :edit, post) do %>
             <i class="fa fa-2x fa-pencil-square" aria-hidden="true"></i>

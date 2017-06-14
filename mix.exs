@@ -41,6 +41,7 @@ defmodule PortfolioPhoenix.Mixfile do
      {:earmark, "~> 1.1"},
      {:timex, "~> 3.0"},
      {:timex_ecto, "~> 3.0"},
+     {:slugger, "~> 0.2"},
      {:gettext, "~> 0.11"},
      {:scrivener_ecto, "~> 1.0"},
      {:arc_ecto, "~> 0.7.0"},

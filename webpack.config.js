@@ -7,7 +7,7 @@ var config = {
     app: [
       "js/app.js",
       "css/app.css", /* putting this here to enable atuo-reload for css because they are not required in js files */
-      "css/masonry.css" 
+      "css/masonry.css"
     ],
     mdEditor: "js/mdEditor.js"
   },

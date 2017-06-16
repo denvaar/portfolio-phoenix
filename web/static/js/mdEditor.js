@@ -5,6 +5,7 @@ import axios from 'axios';
 import MarkdownEditor from 'cute-md-editor';
 
 
+
 const uploadCallback = (files) => {
   let data = new FormData();
   data.append('images', files[0]);
@@ -20,7 +21,6 @@ const removeCallback = (path) => {
 
   return axios.delete("/api/image/remove", data);
 }
-
 
 ReactDOM.render(
   <MarkdownEditor

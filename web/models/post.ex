@@ -38,7 +38,9 @@ defmodule PortfolioPhoenix.Post do
     |> cast(params, [:title, :summary, :content, :author,
                      :published, :date_published, :slug,
                      :banner_bg_color, :banner_fg_color])
-    |> validate_required([:title, :summary, :content, :author, :published, :date_published, :slug])
+    |> validate_required([:title, :summary, :content,
+                          :author, :published, :date_published,
+                          :slug, :banner_bg_color, :banner_fg_color])
   end
 
   defp slug_map(%{"title" => title}) do

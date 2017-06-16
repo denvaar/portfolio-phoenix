@@ -13,6 +13,9 @@
   <%= end %>
 
   </div>
+  <%= if length(@posts) == 0 do %>
+    <h1>No content yet</h1>
+  <% end %>
   <div class="masonry post-text">
     <%= for post <- @posts do %>
       <div class="<%= if post.published, do: "item", else: "unpublished item" %>">

@@ -6,6 +6,10 @@
                           action: post_path(@conn, :create) %>
 </div>
 <script>
-  var content = "<%= escape_javascript {:safe, Map.get(@changeset.changes, :content, "")} %>";
+  <%= if Map.get(@changeset.changes, :content, nil) do %>
+    var content = "<%= escape_javascript {:safe, Map.get(@changeset.changes, :content, "")} %>";
+  <%= else %>
+    var content = "";
+  <%= end %>
 </script>
 <script src="<%= static_path(@conn, "/js/mdEditor.js") %>"></script>

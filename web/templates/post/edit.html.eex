@@ -9,6 +9,10 @@
   <%= link "Delete", to: post_path(@conn, :delete, @post), method: :delete, data: [confirm: "Are you sure?"] %>
 </div>
 <script>
-  var content = "<%= escape_javascript {:safe, Map.get(@changeset.data, :content, "") <> Map.get(@changeset.changes, :content, "")} %>";
+  <%= if Map.get(@changeset.changes, :content, nil) do %>
+    var content = "<%= escape_javascript {:safe, Map.get(@changeset.changes, :content, "")} %>";
+  <%= else %>
+    var content = "<%= escape_javascript {:safe, Map.get(@changeset.data, :content, "")} %>";
+  <%= end %>
 </script>
 <script src="<%= static_path(@conn, "/js/mdEditor.js") %>"></script>

@@ -1,5 +1,5 @@
 <div class="about-content-container">
-  <img class="profilePic" src='<%= static_path(@conn, "/images/me.png") %>' />
+  <img class="profilePic" src='<%= static_path(@conn, "/images/me.jpg") %>' />
   <div class="just-center">
     <p>
        <a href="https://github.com/denvaar" class="github"><i class="fa fa-github"></i></a>
@@ -21,8 +21,8 @@
       Currently
       <div>↘</div>
     </div>
-  
-    <p>Spending too much $ on vinyl records ● Reading <i>The Black Tulip</i> ● Getting up to speed with Ruby/Rails as well as Elixir/Phoenix</p>
+
+    <p>Spending too much $ on vinyl records ● Reading <i>The Black Tulip</i>, <i>Programming Elixir</i>, <i>Programming Phoenix</i> ● Working on a personal finance app ● Fixing to buy rollerblades</p>
 
     <p><i>Updated: June 2017</i></p>
   </div>

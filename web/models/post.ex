@@ -10,8 +10,8 @@ defmodule PortfolioPhoenix.Post do
     field :slug, :string
     field :published, :boolean, default: false
     field :date_published, Timex.Ecto.Date
-    field :banner_bg_color, :string, size: 10
-    field :banner_fg_color, :string, size: 10
+    field :banner_bg_color, :string
+    field :banner_fg_color, :string
 
     timestamps()
   end

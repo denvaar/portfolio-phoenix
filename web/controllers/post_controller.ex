@@ -22,7 +22,8 @@ defmodule PortfolioPhoenix.PostController do
   end
 
   def create(conn, %{"post" => post_params}) do
-    post_params = Map.put(post_params, "author", "Denvo")
+    current_user = conn.assigns.current_user.name
+    post_params = Map.put(post_params, "author", current_user)
     changeset = Post.changeset(%Post{}, post_params)
 
     case Repo.insert(changeset) do

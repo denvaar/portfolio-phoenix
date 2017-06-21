@@ -1,16 +1,12 @@
 <div class="wider">
-  <div class="post-banner">    
-    <h1 class="longshadow just-center">Posts!</h1>
-  </div>
-  <div class="push-down">
   <div class="just-center">
+    <%= if @current_user do %>
+      <%= link to: post_path(@conn, :new) do %>
+        New Post
+      <%= end %>
+    <%= end %>
     <%= pagination_links @page, next: "⟶", previous: "⟵", class: "pagination" %>
   </div>
-  <%= if @current_user do %>
-    <%= link to: post_path(@conn, :new) do %>
-      <i class="fa fa-2x fa-plus-square" aria-hidden="true"></i>
-    <%= end %>
-  <%= end %>
 
   </div>
   <%= if length(@posts) == 0 do %>
@@ -18,19 +14,24 @@
   <% end %>
   <div class="masonry post-text">
     <%= for post <- @posts do %>
-      <div class="<%= if post.published, do: "item", else: "unpublished item" %>">
-        <%= if @current_user do %>
-          <%= link to: post_path(@conn, :edit, post) do %>
-            <i class="fa fa-2x fa-pencil-square" aria-hidden="true"></i>
+      <div class="item">
+        <div style="<%= post.banner_bg_color %>;min-height:15em;">
+        </div>
+        <div style="margin-bottom:2em;padding-top:0.5em;background:#fff;min-height:15em;margin-left:1em;margin-right:1em;margin-top:-10em;">
+          <%= if @current_user do %>
+            <%= link to: post_path(@conn, :edit, post), class: "edit-link" do %>
+              Edit
+            <%= end %>
           <%= end %>
-        <%= end %>
-        <h1>
-          <%= link to: post_path(@conn, :show, post) do %>
-            <%= post.title %>
+          <p style="color:#939393"><%= post.date_published %></p>
+          <%= link to: post_path(@conn, :show, post), class: "item-title" do %>
+            <h1><%= post.title %></h1>
           <%= end %>
-        </h1>
-        <p><%= post.date_published %></p>
-        <p><%= post.summary %></p>
+          <%= if !post.published do %>
+            <p><i class="draft-tag">Draft Only</i></p>
+          <%= end %>
+          <p><%= post.summary %></p>
+        </div>
       </div>
     <%= end %>
   </div>

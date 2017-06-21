@@ -12,7 +12,6 @@
     font-family: 'Avenir Next', sans-serif;
     display: inline-block;
     background: #fff;
-    padding: 1em;
     margin: 0 0 1em;
     width: 100%;
     box-sizing: border-box;
@@ -21,7 +20,20 @@
     box-shadow: 2px 2px 4px 0 #ccc;
 }
 
-.item a {
+.item h1 {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+.item p {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.item .title-background {
+  padding-bottom: 1em;
+}
+
+.item-title {
   text-decoration: none;
 }
 

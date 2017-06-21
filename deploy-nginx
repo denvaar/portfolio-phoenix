@@ -10,4 +10,4 @@ mix phoenix.digest
 MIX_ENV=prod mix ecto.create
 MIX_ENV=prod mix ecto.migrate
 
-PORT=${PHOENIX_PORT} MIX_ENV=prod mix phoenix.server
+PORT=${PHOENIX_PORT} MIX_ENV=prod elixir --detached -S mix phoenix.server

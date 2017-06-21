@@ -1,6 +1,6 @@
 <div class="content-container">
   <div class="post-text">
-    <div class="span-whole-page" style="background:<%= @post.banner_bg_color %>;color:<%= @post.banner_fg_color %>;">
+    <div class="span-whole-page" style="<%= @post.banner_bg_color %>;color:<%= @post.banner_fg_color %>;">
       <div class="page-nav">
         <%= link "← Back", to: post_path(@conn, :index), style: "color:" <> @post.banner_fg_color %>
         <%= if @current_user do %>

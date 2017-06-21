@@ -1,4 +1,5 @@
 html, body {
+  -webkit-font-smoothing: antialiased;
   height: calc(100% - 3rem);
   margin: 0;
   padding: 0;
@@ -6,6 +7,17 @@ html, body {
   color: #545454;
   background: #fafafa;
   box-sizing: border-box;
+}
+
+.draft-tag {
+  background: #fafa69;
+  padding: 0.3em;
+  border-radius: 3px;
+}
+
+.edit-link {
+  float: right;
+  padding: 1em;
 }
 
 .help-block, .alert {

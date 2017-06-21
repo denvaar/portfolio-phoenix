@@ -42,8 +42,6 @@
     <footer class="footer">
       <p>🍕  🚲  ❤️ </br>© 2017 Denver Smith</p>
     </footer>
-    <script src="<%= static_path(@conn, "/js/highlight.pack.js") %>"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

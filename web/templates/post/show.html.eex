@@ -19,3 +19,5 @@
     </div>
   </div>
 </div>
+<script src="<%= static_path(@conn, "/js/highlight.pack.js") %>"></script>
+<script>hljs.initHighlightingOnLoad();</script>

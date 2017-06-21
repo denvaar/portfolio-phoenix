@@ -3,7 +3,7 @@
   "license": "MIT",
   "scripts": {
     "watch": "webpack --display-chunks --watch-stdin --progress --color",
-    "deploy": "webpack -p"
+    "deploy": "webpack"
   },
   "dependencies": {
     "axios": "^0.16.2",

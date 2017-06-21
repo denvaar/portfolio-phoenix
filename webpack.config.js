@@ -60,12 +60,10 @@ var config = {
     new ExtractTextPlugin("css/[name].css")
   ]
 };
-
 if (process.env.NODE_ENV === "production") {
   config.plugins.push(
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({ minimize: true })
   );
 }
-
 module.exports = config;
